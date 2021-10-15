@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 Plannets</title>
+    <style>
+        :root {
+            --mainRadius: 20px;
+            --mainPadding: 20px 50px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: .3fr .5fr .5fr .5fr .5fr .1fr;
+            grid-template-areas:
+                "title title title"
+                "main-block main-block main-block"
+                "content1 content2 content3"
+                "content4 content5 content6"
+                "content7 content8 content9"
+                "footer footer footer";
+            grid-gap: 2em 1em;
+            text-align: center;
+            padding: var(--mainPadding);
+            background: #191A19;
+        }
+
+        .title {
+            grid-area: title;
+            border-radius: var(--mainRadius);
+            text-align: center;
+            margin: auto;
+        }
+
+        .title h1 {
+            font-size: 80px;
+            font-weight: bolder;
+            color: #ccc;
+            text-shadow: 0 3px 3px #222;
+        }
+
+        .main-block {
+            grid-area: main-block;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .caption {
+            grid-area: caption;
+            position: relative;
+            font-size: 25px;
+            color: #ccc;
+        }
+
+        .cover {
+            grid-area: cover;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+
+        .img-container{
+            position: relative;
+        }
+
+        .img-container:hover .cover{
+            opacity: .3;
+        }
+
+        .img-container:hover .hover-txt a{
+            opacity: 1;
+            z-index: 2 ;
+        }
+
+        .hover-txt a{
+            position: absolute;
+            background: #ccc;
+            width: 150px;
+            height: 35px;
+            padding: 10px 10px;
+            transition: .5s ease-in-out;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-radius: var(--mainRadius);
+            opacity: 0;
+            text-decoration: none;
+            color:#222;
+        }
+
+        .content1 {
+            grid-area: content1;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content2 {
+            grid-area: content2;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content3 {
+            grid-area: content3;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content4 {
+            grid-area: content4;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content5 {
+            grid-area: content5;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content6 {
+            grid-area: content6;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content7 {
+            grid-area: content7;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content8 {
+            grid-area: content8;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        .content9 {
+            grid-area: content9;
+            background: #222;
+            border-radius: var(--mainRadius);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.1fr;
+            grid-template-areas: "cover""caption";
+            grid-gap: .5em;
+            box-shadow: 0px 5px 5px #111;
+        }
+
+        footer{
+            grid-area: footer;
+            align-items: center;
+        }
+        footer span{
+            color: #ccc;
+        }
+
+        @media only screen and (max-width:550px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.4fr .6fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .4fr;
+                grid-template-areas:
+                    "title"
+                    "main-block"
+                    "content1"
+                    "content2"
+                    "content3"
+                    "content4"
+                    "content5"
+                    "content6"
+                    "content7"
+                    "content8"
+                    "content9"
+                    "footer";
+            }
+
+            .title h1 {
+                font-size: 35px;
+            }
+
+            .main-block .caption{
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>9 Plannets</h1>
+        </div>
+        <div class="main-block">
+            <div class="img-container">
+                <img src="./glalxy.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Andromeda Galaxy</div>
+        </div>
+        <div class="content1">
+            <div class="img-container">
+                <img src="./mercury.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Mercury</div>
+        </div>
+        <div class="content2">
+            <div class="img-container">
+                <img src="./venus.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Venus</div>
+        </div>
+        <div class="content3">
+            <div class="img-container">
+                <img src="./earth.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Earth</div>
+        </div>
+        <div class="content4">
+            <div class="img-container">
+                <img src="./mars.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Mars</div>
+        </div>
+        <div class="content5">
+            <div class="img-container">
+                <img src="./jupiter.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Jupiter</div>
+        </div>
+        <div class="content6">
+            <div class="img-container">
+                <img src="./saturn.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Saturn</div>
+        </div>
+        <div class="content7">
+            <div class="img-container">
+                <img src="./uranus.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Uranus</div>
+        </div>
+        <div class="content8">
+            <div class="img-container">
+                <img src="./neptune.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Neptune</div>
+        </div>
+        <div class="content9">
+            <div class="img-container">
+                <img src="./pluto.jpg" class="cover">
+                <div class="hover-txt">
+                    <a href="#">Read more</a>
+                </div>
+            </div>
+            <div class="caption">Pluto</div>
+        </div>
+        <footer>
+            <span>&copy; Copyright 2021 9Plannets. All rights reserved.</span>
+        </footer>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
