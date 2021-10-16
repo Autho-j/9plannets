@@ -1,0 +1,263 @@
+:root {
+    --mainRadius: 20px;
+    --mainPadding: 20px 50px;
+    --mainColor: #191A19;
+    --blockColor: #222;
+    --shadowColor: #111;
+    --fontColor: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: .3fr .7fr .5fr .5fr .5fr .1fr;
+    grid-template-areas:
+        "title title title"
+        "main-block main-block main-block"
+        "content1 content2 content3"
+        "content4 content5 content6"
+        "content7 content8 content9"
+        "footer footer footer";
+    grid-gap: 2em 1em;
+    text-align: center;
+    padding: var(--mainPadding);
+    background: var(--mainColor);
+}
+
+.title {
+    grid-area: title;
+    border-radius: var(--mainRadius);
+    text-align: center;
+    margin: auto;
+}
+
+.title h1 {
+    font-size: 80px;
+    font-weight: bolder;
+    color: var(--fontColor);
+    text-shadow: 0 3px 3px var(--shadowColor);
+}
+
+.main-block {
+    grid-area: main-block;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.caption {
+    grid-area: caption;
+    font-size: 25px;   
+    color: var(--fontColor);
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cover {
+    grid-area: cover;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container:hover .cover {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.img-container:hover .hover-txt a {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hover-txt a {
+    position: absolute;
+    background: var(--fontColor);
+    width: 150px;
+    height: 35px;
+    padding: 10px 10px;
+    transition: .5s ease-in-out;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: var(--mainRadius);
+    opacity: 0;
+    text-decoration: none;
+    text-align: center;
+    color: var(--blockColor);
+}
+
+.content1 {
+    grid-area: content1;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content2 {
+    grid-area: content2;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content3 {
+    grid-area: content3;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content4 {
+    grid-area: content4;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content5 {
+    grid-area: content5;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content6 {
+    grid-area: content6;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content7 {
+    grid-area: content7;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content8 {
+    grid-area: content8;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+.content9 {
+    grid-area: content9;
+    background: var(--blockColor);
+    border-radius: var(--mainRadius);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-areas: "cover""caption";
+    grid-gap: .5em;
+    box-shadow: 0px 5px 5px var(--shadowColor);
+}
+
+footer {
+    grid-area: footer;
+    align-items: center;
+}
+
+footer span {
+    color: #ccc;
+}
+
+@media only screen and (max-width:550px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr .6fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .4fr;
+        grid-template-areas:
+            "title"
+            "main-block"
+            "content1"
+            "content2"
+            "content3"
+            "content4"
+            "content5"
+            "content6"
+            "content7"
+            "content8"
+            "content9"
+            "footer";
+    }
+
+    .title h1 {
+        font-size: 35px;
+    }
+
+    .main-block .caption {
+        margin: 10px;
+    }
+}
